@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 // Connexion à MongoDB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://https://portfoliomicka.osc-fr1.scalingo.io:27017/portfolio', {
+mongoose.connect('mongodb://mickael.compper:<M:WgJF0F;p.Eb7.R@h(yZV^&fZbez]028uG2BNp4p%P[1GRmCT*NAv?>X]PagcJ@8a61d56d-c987-42a6-ac0c-db1541f3b255.portfoliomicka-6107.mongo.b.osc-fr1.scalingo-dbs.com:35062/portfoliomicka-6107?replicaSet=portfoliomicka-6107-rs0&ssl=true/portfoliomicka-6107', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
