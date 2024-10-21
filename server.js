@@ -12,9 +12,11 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
+const mongoUrl = process.env.SCALINGO_MONGO_URL || process.env.MONGO_URL;
+
 // Connexion à MongoDB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://micka123:azertyuiopqsdfghjklmwxcvbn@8a61d56d-c987-42a6-ac0c-db1541f3b255.portfoliomicka-6107.mongo.b.osc-fr1.scalingo-dbs.com:35062/portfoliomicka-6107?replicaSet=portfoliomicka-6107-rs0&ssl=true/portfoliomicka-6107', {
+mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
