@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 // Connexion à MongoDB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/portfolio', {
+mongoose.connect('mongodb://https://portfoliomicka.osc-fr1.scalingo.io:27017/portfolio', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
