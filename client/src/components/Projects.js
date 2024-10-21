@@ -64,7 +64,7 @@ const Projects = () => {
     const fetchComments = async () => {
         setLoadingComments(true);
         try {
-            const response = await fetch(`http://localhost:5000/api/comments?projectId=${selectedProject.id}`);
+            const response = await fetch(`/api/comments?projectId=${selectedProject.id}`);
             if (response.ok) {
                 const data = await response.json();
                 setComments(data);
@@ -85,7 +85,7 @@ const Projects = () => {
         e.preventDefault();
         setSubmittingComment(true);
         try {
-            const response = await fetch('http://localhost:5000/api/comments', {
+            const response = await fetch('/api/comments', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -128,7 +128,6 @@ const Projects = () => {
                 ))}
             </div>
 
-            {/* Première modale pour le projet */}
             {selectedProject && (
                 <Modal show={showModal} onHide={handleCloseModal} size='lg' centered>
                     <Modal.Header closeButton>
@@ -159,7 +158,6 @@ const Projects = () => {
                 </Modal>
             )}
 
-            {/* Deuxième modale pour les commentaires */}
             {selectedProject && (
                 <Modal
                     show={showCommentsModal}
@@ -185,7 +183,6 @@ const Projects = () => {
                         ) : (
                             <p>Aucun commentaire disponible.</p>
                         )}
-                        {/* Formulaire pour ajouter un nouveau commentaire */}
                         <Form onSubmit={handleSubmitComment} className='mt-4'>
                             <Form.Group controlId='author'>
                                 <Form.Label>Votre nom</Form.Label>
